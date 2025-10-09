@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Exo 2', sans-serif;
+    background: #00010F;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  .sci-fi-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #00FFFF 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+  }
+
+  .sci-fi-cursor.hover {
+    transform: scale(2);
+    background: radial-gradient(circle, #FF00FF 0%, transparent 70%);
+    box-shadow: 0 0 30px #FF00FF, 0 0 60px #FF00FF;
+  }
+
+  .holographic {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 
+      0 0 20px rgba(0, 255, 255, 0.1),
+      inset 0 0 20px rgba(0, 255, 255, 0.05);
+  }
+
+  .neon-text {
+    font-family: 'Orbitron', monospace;
+    text-shadow: 
+      0 0 5px #00FFFF,
+      0 0 10px #00FFFF,
+      0 0 20px #00FFFF;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #00FFFF, #FF00FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .energy-border {
+    position: relative;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+  }
+
+  .energy-border::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, #00FFFF, #FF00FF, #39FF14, #00FFFF);
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: energyFlow 3s ease-in-out infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes energyFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+    animation: scan 2s infinite;
+  }
+
+  @keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  .floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #00FFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00FFFF;
+    animation: float 15s infinite linear;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+      transform: translateY(-100px) translateX(100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+    }
+  }
+
+  .glitch {
+    animation: glitch 0.3s ease-in-out;
+  }
+
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+}
+
+@layer components {
+  .btn-sci-fi {
+    @apply px-8 py-4 bg-transparent border border-cyan-400 text-cyan-400 font-semibold uppercase tracking-wider;
+    @apply hover:bg-cyan-400 hover:text-black transition-all duration-300;
+    @apply relative overflow-hidden;
+    font-family: 'Orbitron', monospace;
+    text-shadow: 0 0 10px currentColor;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  .btn-sci-fi:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  }
+
+  .section-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .navbar {
+    @apply fixed top-0 w-full z-50 px-6 py-4 transition-transform duration-300;
+    background: rgba(0, 1, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  }
+
+  .nav-hidden {
+    @apply -translate-y-full;
+  }
+
+  .hud-panel {
+    @apply holographic rounded-lg p-6 relative;
+    transform-style: preserve-3d;
+  }
+
+  .energy-pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
