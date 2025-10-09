@@ -1,66 +1,58 @@
 export const timeline = [
   {
     id: 1,
-    year: "2021",
+    date: "2022",
     title: "Started Web Development Journey",
+    company: "Self-Learning",
     description: "Began learning HTML, CSS, and JavaScript. Built my first static websites and discovered my passion for creating digital experiences.",
-    icon: "🚀",
-    type: "education"
+    skills: ["HTML", "CSS", "JavaScript", "Web Design"]
   },
   {
     id: 2,
-    year: "2022",
-    title: "Mastered React & Modern Frontend",
-    description: "Dove deep into React ecosystem, learned state management, and started building dynamic web applications with modern tools and libraries.",
-    icon: "⚛️",
-    type: "skill"
+    date: "2023",
+    title: "Web Development & Social Media Marketing Intern",
+    company: "Digital Agency",
+    description: "Developed a responsive client website using WordPress and created engaging video, graphic, and carousel content with DaVinci Resolve, Photoshop, and Canva.",
+    skills: ["WordPress", "DaVinci Resolve", "Photoshop", "Canva", "Social Media"]
   },
   {
     id: 3,
-    year: "2022",
-    title: "First Freelance Projects",
-    description: "Started taking on freelance projects, building websites for local businesses and gaining real-world experience with client requirements.",
-    icon: "💼",
-    type: "work"
+    date: "2025",
+    title: "Salesforce Intern",
+    company: "Salesforce",
+    description: "Gained hands-on experience in Salesforce AI and Administration. Built a travel agency app, explored Apex programming, and implemented CRM features like workflow automation, data security, and user management.",
+    skills: ["Salesforce", "Apex", "CRM", "Workflow Automation", "Data Security"]
   },
   {
     id: 4,
-    year: "2023",
-    title: "Full-Stack Development",
-    description: "Expanded into backend development with Node.js, databases, and API design. Built complete web applications from frontend to backend.",
-    icon: "🔧",
-    type: "skill"
+    date: "2025",
+    title: "Full Stack Intern",
+    company: "Tech Company",
+    description: "Developed responsive and dynamic web applications using HTML, CSS, JavaScript, Bootstrap, and the MERN stack. Contributed to both frontend and backend, integrating AI features for smarter functionality.",
+    skills: ["MERN Stack", "Bootstrap", "AI Integration", "Full Stack Development"]
   },
   {
     id: 5,
-    year: "2023",
-    title: "Junior Developer Position",
-    description: "Joined a tech startup as a Junior Full-Stack Developer, working on scalable web applications and collaborating with experienced developers.",
-    icon: "🏢",
-    type: "work"
+    date: "2025",
+    title: "1st Place – Appwrite Sites Hackathon",
+    company: "Appwrite",
+    description: "Built an innovative and fully functional web app using Appwrite's backend services, focusing on speed, scalability, and user experience. Recognized for technical execution and creative design.",
+    skills: ["Appwrite", "Backend Services", "Scalability", "UX Design"]
   },
   {
     id: 6,
-    year: "2024",
-    title: "Advanced Animations & UX",
-    description: "Specialized in advanced animations with Framer Motion and GSAP, focusing on creating immersive user experiences and micro-interactions.",
-    icon: "🎭",
-    type: "skill"
+    date: "2025",
+    title: "Best Beginner Hack – HackSocial Hackathon",
+    company: "HackSocial",
+    description: "Created a social-impact-driven project that showcased strong teamwork, creative UI design, and practical implementation of web technologies, earning the 'Best Beginner Hack' title.",
+    skills: ["Social Impact", "UI Design", "Teamwork", "Web Technologies"]
   },
   {
     id: 7,
-    year: "2024",
-    title: "Open Source Contributions",
-    description: "Started contributing to open source projects, sharing knowledge with the developer community and building a strong GitHub presence.",
-    icon: "🌟",
-    type: "achievement"
-  },
-  {
-    id: 8,
-    year: "2024",
-    title: "Current: Senior Developer",
-    description: "Currently working as a Senior Full-Stack Developer, leading projects and mentoring junior developers while continuously learning new technologies.",
-    icon: "🎯",
-    type: "work"
+    date: "2025",
+    title: "Top 5 Runner Up – Azure Developer Community Full Stack Bootcamp",
+    company: "Microsoft Azure",
+    description: "Designed and deployed a full-stack project leveraging cloud-based tools and modern frameworks. Recognized among the top participants for clean architecture and effective project delivery.",
+    skills: ["Azure", "Cloud Computing", "Full Stack", "Clean Architecture"]
   }
 ];
