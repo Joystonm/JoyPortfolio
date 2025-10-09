@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+      },
       colors: {
         'space-black': '#00010F',
         'neon-cyan': '#00FFFF',

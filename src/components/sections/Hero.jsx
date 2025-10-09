@@ -42,12 +42,12 @@ const Hero = () => {
       <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Holographic Title */}
         <motion.div
-          className="mb-8"
+          className="mb-6 md:mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <h1 className="text-6xl md:text-8xl font-orbitron font-black neon-text mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-orbitron font-black neon-text mb-4 px-4">
             {text}
             <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>
               |
@@ -58,7 +58,7 @@ const Hero = () => {
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl md:text-2xl font-exo text-gray-300 mb-12 max-w-3xl mx-auto"
+          className="text-lg sm:text-xl md:text-2xl font-exo text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
@@ -70,7 +70,7 @@ const Hero = () => {
 
         {/* Holographic Panels */}
         <motion.div
-          className="grid md:grid-cols-3 gap-6 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}
@@ -91,8 +91,8 @@ const Hero = () => {
               }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="font-orbitron text-neon-cyan text-lg mb-2">{item.title}</h3>
-              <p className="text-gray-400 text-sm">{item.desc}</p>
+              <h3 className="font-orbitron text-neon-cyan text-base md:text-lg mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-xs md:text-sm">{item.desc}</p>
               <div className="scan-line absolute inset-0 rounded-lg" />
             </motion.div>
           ))}
@@ -103,9 +103,10 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 2.5 }}
+          className="px-4"
         >
           <button
-            className="btn-sci-fi scan-line energy-border"
+            className="btn-sci-fi scan-line energy-border text-sm md:text-base px-6 md:px-8 py-3 md:py-4"
             data-cursor="hover"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
@@ -115,7 +116,7 @@ const Hero = () => {
 
         {/* Status Indicators */}
         <motion.div
-          className="flex justify-center space-x-8 mt-12"
+          className="flex flex-wrap justify-center gap-4 md:gap-8 mt-8 md:mt-12 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
@@ -130,8 +131,8 @@ const Hero = () => {
       </div>
 
       {/* Energy Orbs */}
-      <div className="absolute top-1/4 left-10 w-4 h-4 bg-neon-cyan rounded-full animate-pulse-neon opacity-60" />
-      <div className="absolute top-1/3 right-20 w-3 h-3 bg-neon-magenta rounded-full animate-pulse-neon opacity-40" />
+      <div className="absolute top-1/4 left-4 md:left-10 w-3 md:w-4 h-3 md:h-4 bg-neon-cyan rounded-full animate-pulse-neon opacity-60" />
+      <div className="absolute top-1/3 right-8 md:right-20 w-2 md:w-3 h-2 md:h-3 bg-neon-magenta rounded-full animate-pulse-neon opacity-40" />
       <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-electric-green rounded-full animate-pulse-neon opacity-50" />
     </section>
   );

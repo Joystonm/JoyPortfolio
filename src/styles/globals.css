@@ -18,6 +18,34 @@
     cursor: none;
   }
 
+  /* Mobile cursor handling */
+  @media (max-width: 768px) {
+    body {
+      cursor: auto;
+    }
+    
+    .sci-fi-cursor {
+      display: none;
+    }
+  }
+
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .sci-fi-cursor {
+      display: none;
+    }
+    
+    body {
+      cursor: auto;
+    }
+    
+    /* Improve touch targets */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
   .sci-fi-cursor {
     position: fixed;
     width: 20px;
@@ -117,6 +145,17 @@
     z-index: -1;
   }
 
+  /* Reduce particles on mobile for performance */
+  @media (max-width: 768px) {
+    .floating-particles {
+      opacity: 0.5;
+    }
+    
+    .particle:nth-child(n+6) {
+      display: none;
+    }
+  }
+
   .particle {
     position: absolute;
     width: 2px;
@@ -169,9 +208,9 @@
 
 @layer components {
   .btn-sci-fi {
-    @apply px-8 py-4 bg-transparent border border-cyan-400 text-cyan-400 font-semibold uppercase tracking-wider;
+    @apply px-6 md:px-8 py-3 md:py-4 bg-transparent border border-cyan-400 text-cyan-400 font-semibold uppercase tracking-wider;
     @apply hover:bg-cyan-400 hover:text-black transition-all duration-300;
-    @apply relative overflow-hidden;
+    @apply relative overflow-hidden text-sm md:text-base;
     font-family: 'Orbitron', monospace;
     text-shadow: 0 0 10px currentColor;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
@@ -186,12 +225,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
   }
 
+  @media (min-width: 768px) {
+    .section-wrapper {
+      padding: 2rem;
+    }
+  }
+
   .navbar {
-    @apply fixed top-0 w-full z-50 px-6 py-4 transition-transform duration-300;
+    @apply fixed top-0 w-full z-50 px-4 md:px-6 py-4 transition-transform duration-300;
     background: rgba(0, 1, 15, 0.8);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 255, 255, 0.2);
@@ -202,7 +247,7 @@
   }
 
   .hud-panel {
-    @apply holographic rounded-lg p-6 relative;
+    @apply holographic rounded-lg p-4 md:p-6 relative;
     transform-style: preserve-3d;
   }
 

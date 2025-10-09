@@ -28,23 +28,23 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-orbitron text-5xl font-black neon-text mb-4">
+          <h2 className="font-orbitron text-3xl sm:text-4xl md:text-5xl font-black neon-text mb-4">
             SYSTEM <span className="gradient-text">DIAGNOSTICS</span>
           </h2>
-          <div className="h-1 bg-gradient-to-r from-transparent via-neon-magenta to-transparent mx-auto w-64" />
-          <p className="font-exo text-gray-400 mt-6 max-w-2xl mx-auto">
+          <div className="h-1 bg-gradient-to-r from-transparent via-neon-magenta to-transparent mx-auto w-48 md:w-64" />
+          <p className="font-exo text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-base">
             ANALYZING CORE COMPETENCIES... DISPLAYING SKILL MATRIX STATUS
           </p>
         </motion.div>
 
         {/* Category Selector */}
         <motion.div
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 md:mb-12 px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -53,7 +53,7 @@ const Skills = () => {
             {categories.map((category, index) => (
               <motion.button
                 key={category}
-                className={`px-6 py-3 font-orbitron text-sm transition-all duration-300 ${
+                className={`px-4 md:px-6 py-2 md:py-3 font-orbitron text-xs md:text-sm transition-all duration-300 ${
                   activeCategory === category
                     ? 'bg-neon-magenta text-black'
                     : 'text-neon-magenta hover:bg-neon-magenta/10'
@@ -74,7 +74,7 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4"
           key={activeCategory}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

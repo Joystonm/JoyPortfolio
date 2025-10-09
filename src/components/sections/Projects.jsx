@@ -33,32 +33,32 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-orbitron text-5xl font-black neon-text mb-4">
+          <h2 className="font-orbitron text-3xl sm:text-4xl md:text-5xl font-black neon-text mb-4">
             PROJECT <span className="gradient-text">DATABASE</span>
           </h2>
-          <div className="h-1 bg-gradient-to-r from-transparent via-electric-green to-transparent mx-auto w-64" />
-          <p className="font-exo text-gray-400 mt-6 max-w-2xl mx-auto">
+          <div className="h-1 bg-gradient-to-r from-transparent via-electric-green to-transparent mx-auto w-48 md:w-64" />
+          <p className="font-exo text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-base">
             ACCESSING SECURE PROJECT ARCHIVES... DISPLAYING CLASSIFIED DEVELOPMENT RECORDS
           </p>
         </motion.div>
 
         {/* Category Filter */}
         <motion.div
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 md:mb-12 px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="hud-panel flex space-x-2">
+          <div className="hud-panel flex flex-wrap justify-center gap-2">
             {categories.map((category, index) => (
               <motion.button
                 key={category}
-                className={`px-4 py-2 font-orbitron text-xs transition-all duration-300 ${
+                className={`px-3 md:px-4 py-2 font-orbitron text-xs transition-all duration-300 ${
                   activeCategory === category
                     ? 'bg-electric-green text-black'
                     : 'text-electric-green hover:bg-electric-green/10'
@@ -79,7 +79,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -114,7 +114,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-space-black/80 to-transparent" />
               </div>
