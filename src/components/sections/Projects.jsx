@@ -87,7 +87,7 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="hud-panel group cursor-pointer relative overflow-hidden"
+              className="hud-panel group relative overflow-hidden"
               data-cursor="hover"
               whileHover={{ 
                 scale: 1.02,
@@ -97,7 +97,6 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 + index * 0.1 }}
-              onClick={() => setSelectedProject(project)}
             >
               {/* Project Status */}
               <div className="flex justify-between items-start mb-4">
@@ -122,7 +121,10 @@ const Projects = () => {
 
               {/* Project Info */}
               <div className="space-y-3">
-                <h3 className="font-orbitron text-xl font-bold text-neon-cyan">
+                <h3 
+                  className="font-orbitron text-xl font-bold text-neon-cyan cursor-pointer hover:text-white transition-colors"
+                  onClick={() => setSelectedProject(project)}
+                >
                   {project.title}
                 </h3>
                 <p className="text-gray-400 text-sm line-clamp-2">
@@ -147,13 +149,31 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex space-x-2 pt-2">
-                  <button className="flex-1 py-2 font-orbitron text-xs border border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 transition-colors">
-                    VIEW_CODE
-                  </button>
-                  <button className="flex-1 py-2 font-orbitron text-xs border border-electric-green/50 text-electric-green hover:bg-electric-green/10 transition-colors">
-                    LIVE_DEMO
-                  </button>
+                <div className="flex space-x-2 pt-2 relative z-20">
+                  {project.githubUrl && (
+                    <button 
+                      className="flex-1 py-2 font-orbitron text-xs border border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 transition-colors relative z-30 pointer-events-auto cursor-pointer"
+                      style={{ pointerEvents: 'auto' }}
+                      onMouseDown={() => {
+                        console.log('Mouse down on GitHub button');
+                        window.open(project.githubUrl, '_blank');
+                      }}
+                    >
+                      VIEW_CODE
+                    </button>
+                  )}
+                  {project.liveUrl && (
+                    <button 
+                      className="flex-1 py-2 font-orbitron text-xs border border-electric-green/50 text-electric-green hover:bg-electric-green/10 transition-colors relative z-30 pointer-events-auto cursor-pointer"
+                      style={{ pointerEvents: 'auto' }}
+                      onMouseDown={() => {
+                        console.log('Mouse down on Live demo button');
+                        window.open(project.liveUrl, '_blank');
+                      }}
+                    >
+                      LIVE_DEMO
+                    </button>
+                  )}
                 </div>
               </div>
 

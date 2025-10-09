@@ -11,7 +11,7 @@ const SciFiCursor = () => {
     };
 
     const handleMouseEnter = (e) => {
-      if (e.target.dataset.cursor === 'hover') {
+      if (e.target && e.target.dataset && e.target.dataset.cursor === 'hover') {
         setIsHovering(true);
       }
     };
