@@ -6,7 +6,7 @@ export const projects = [
     image: "/cademy.png",
     technologies: ["React", "JavaScript", "3D Modeling", "Web3D"],
     category: "FRONTEND",
-    liveUrl: "https://cademy.appwrite.network/",
+    liveUrl: "https://cademycad.netlify.app/",
     githubUrl: "https://github.com/Joystonm/CADemy"
   },
   {
