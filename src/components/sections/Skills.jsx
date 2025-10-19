@@ -95,11 +95,14 @@ const Skills = () => {
             >
               {/* Skill Header */}
               <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="font-orbitron text-lg font-bold text-neon-magenta">
-                    {skill.name}
-                  </h3>
-                  <p className="text-gray-400 text-sm">{skill.category}</p>
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">{skill.icon}</span>
+                  <div>
+                    <h3 className="font-orbitron text-lg font-bold text-neon-magenta">
+                      {skill.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm">{skill.category}</p>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-electric-green rounded-full animate-pulse-neon" />
@@ -111,7 +114,7 @@ const Skills = () => {
 
               {/* Progress Bar */}
               <div className="mb-4">
-                <div className="flex justify-between text-xs font-orbitron text-gray-400 mb-2">
+                <div className="flex justify-between text-xs font-sans text-gray-400 mb-2">
                   <span>PROFICIENCY</span>
                   <span>{skill.level}%</span>
                 </div>
@@ -132,10 +135,10 @@ const Skills = () => {
               <div className="space-y-2">
                 {/* Status Indicator */}
                 <div className="flex justify-between text-xs">
-                  <span className="font-orbitron text-gray-400">STATUS</span>
+                  <span className="font-sans text-gray-400">STATUS</span>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-electric-green rounded-full animate-pulse-neon" />
-                    <span className="font-orbitron text-xs text-electric-green">
+                    <span className="font-sans text-xs text-electric-green">
                       OPERATIONAL
                     </span>
                   </div>

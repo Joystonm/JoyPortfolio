@@ -55,9 +55,9 @@ const Preloader = () => {
         {/* Logo */}
         <motion.div
           className="mb-8"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="font-orbitron text-6xl font-black neon-text mb-4">
             JOY.EXE
@@ -91,19 +91,20 @@ const Preloader = () => {
           {/* Progress Percentage */}
           <motion.div
             className="font-orbitron text-electric-green text-sm"
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 1, repeat: Infinity }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
             {Math.round(progress)}% COMPLETE
           </motion.div>
         </div>
 
-        {/* Scanning Lines */}
+        {/* Scanning Lines - Simplified */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
-            className="absolute w-full h-0.5 bg-neon-cyan opacity-30"
-            animate={{ y: [0, 800] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="absolute w-full h-px bg-neon-cyan/20"
+            animate={{ y: [0, 400] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
           />
         </div>
       </div>

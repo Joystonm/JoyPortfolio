@@ -29,6 +29,59 @@
     }
   }
 
+  /* Improved readability for navigation */
+  .navbar a {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  /* Simplified animations */
+  .subtle-glow {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .subtle-glow:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  }
+
+  /* Professional headshot styling */
+  .headshot-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .headshot-container::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, #00FFFF, #FF00FF);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+    animation: rotate 8s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .headshot-container::before {
+      animation: none;
+    }
+    
+    .animate-pulse-neon {
+      animation: none;
+    }
+    
+    .scan-line::after {
+      animation: none;
+    }
+  }
+
   /* Touch device optimizations */
   @media (hover: none) and (pointer: coarse) {
     .sci-fi-cursor {

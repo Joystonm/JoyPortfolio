@@ -43,7 +43,7 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={item.href}
-              className="font-orbitron text-sm text-neon-cyan hover:text-white transition-colors relative group"
+              className="font-sans text-sm text-gray-300 hover:text-neon-cyan transition-colors relative group"
               data-cursor="hover"
               whileHover={{ y: -2 }}
               initial={{ opacity: 0, y: -20 }}
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <motion.button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="block w-full text-left font-orbitron text-sm text-neon-cyan hover:text-white transition-colors py-2"
+                  className="block w-full text-left font-sans text-sm text-gray-300 hover:text-neon-cyan transition-colors py-2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
